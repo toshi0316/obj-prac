@@ -7,6 +7,7 @@ namespace obj_prac
 {
     class CSikaku : CZukei
     {
+        private int idx;
 
         /** 四角形を作成*/
         public static void instantiateShikaku()
@@ -18,8 +19,10 @@ namespace obj_prac
             takasa.Add(rand.Next(1, 11));
         }
 
-        public override void calc()
+        protected override void calc()
         {
+           
+
             return "四角形：底辺" + teihen[idx] + " 高さ" + takasa[idx] + "=" + (takasa[idx] * teihen[idx]);
         }
     }

@@ -8,21 +8,25 @@ namespace obj_prac
 {
     abstract class CZukei
     {
+        /** 自分のインスタンス*/
+        protected static List<CZukei> we = new List<CZukei>();
+
         /** 乱数*/
-        public static Random rand = new Random();
+        protected static Random rand = new Random();
 
         /** データの種類*/
-        public enum TYPE
+        protected enum TYPE
         {
             SHIKAKU,     // 四角形
             SANKAKU     // 三角形
         };
+
         /** 種類。処理を分けるのに利用する*/
-        public TYPE type;
+        protected TYPE type;
         /** 底辺*/
-        public float teihen;
+        protected float teihen;
         /** 高さ*/
-        public float takasa;
+        protected float takasa;
 
         public CZukei()
         {
@@ -30,11 +34,6 @@ namespace obj_prac
             teihen.Add(rand.Next(1, 11));
         }
 
-        public abstract calc(int ind);
-
-        public static void calcAll(TextBox text)
-        {
-
-        }
+        protected abstract void calc();
     }
 }
